@@ -87,12 +87,12 @@ input:focus {
   cursor: pointer;
   pointer-events: auto;
   z-index: 10;
-  background-color: #fff;
+  /* background-color: #fff; */
   background-image: none;
   color: #666;
   -webkit-transition: color 0.15s linear;
   transition: color 0.15s linear;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .fa:hover {
   color: rgb(47, 214, 122);
@@ -133,7 +133,7 @@ input:focus {
   color: #fff;
 }
 
-.fa-trash-alt,
+.fa-trash,
 .fa-edit {
   /* margin-left: -2.5rem; */
   cursor: pointer;
@@ -142,7 +142,7 @@ input:focus {
   color: rgb(251, 251, 251);
   -webkit-transition: color 0.15s linear;
   transition: color 0.15s linear;
-  font-size: 2rem;
+  font-size: 2rem !important;
 }
 
 .addItems .fa-edit {
@@ -156,7 +156,7 @@ input:focus {
 /*  Please Subscribe to ThapaTechnical Youtube Channel
 /* Click Here: https://www.youtube.com/thapatechnical  */
 
-.eachItem:hover .fa-trash-alt {
+.eachItem:hover .fa-trash {
   color: rgb(214, 47, 61);
 }
 
