@@ -13,8 +13,8 @@ const getLocalStorageData = () => {
 
 const Todo = () => {
     const [inputData, setInputData] = useState("");
-
     const [items, setItems] = useState(getLocalStorageData());
+    const [toggleButton, setToggleButton] = useState(false);
 
     const addItems = () => {
         if (!inputData) {
@@ -49,6 +49,10 @@ const Todo = () => {
         }
     };
 
+    const editItem = (id) => {
+        
+    };
+    
     useEffect(() => {
         localStorage.setItem("mytodolist", JSON.stringify(items));
     }, [items]);
@@ -71,7 +75,7 @@ const Todo = () => {
                             onChange={(event) => setInputData(event.target.value)}
                             onKeyPress={handleKeyPress}
                         ></input>
-                        <i className="fa fa-solid fa-plus add-btn" onClick={addItems}></i>
+                        {toggleButton ? <i className="fa fa-edit add-btn" onClick={addItems}></i> : <i className="fa fa-solid fa-plus add-btn" onClick={addItems}></i>}
                     </div>
                     {/* show our items */}
 
@@ -81,7 +85,7 @@ const Todo = () => {
                                 <div className="eachItem" key={curItem.id}>
                                     <h3>{curItem.name}</h3>
                                     <div className="todo-btn">
-                                        <i className="fa fa-edit add-btn" onClick={() => updateItem(curItem.id)}></i>
+                                        <i className="fa fa-edit add-btn" onClick={() => editItem(curItem.id)}></i>
                                         <i className="fa fa-trash add-btn" onClick={() => deleteItem(curItem.id)}></i>
                                     </div>
                                 </div>
